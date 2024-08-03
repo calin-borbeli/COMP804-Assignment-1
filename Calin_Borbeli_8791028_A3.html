@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>COMP804 – ASSIGNMENT 1</title>
+
+    <!-- Set the viewport for any device -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Set  meta charset, description, author -->
+    <meta charset="UTF-8">
+    <meta name="description" content="COMP804 – Web Security - Assessment Task 3 – Assignment 1">
+    <meta name="author" content="Calin Borbeli">
+
+    <!-- Get font from Google Fonts API -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+
+    <!-- Javascript code -->
+    <script>
+      // Task 4 Javascript code
+
+      // The 3 subjects in Task 4 can all be included in a class of type 'Pet'
+      // as they all have properties like the type, image source and reference
+      // and they all need to perform the same actions when the buttons are clicked.
+      // Therefore, rather than using Functional programming I decided that it is 
+      // more appropriate to use OOP.
+      // I created a class for the Pet type objects
+      class Pet {
+        // I created a constructor method for the 3 properties: type, image source,
+        // and image link for the reference source
+        constructor(type, imageSrc, imageLink){
+          this.type = type;
+          this.imageSrc = imageSrc;
+          this.imageLink = imageLink;
+        }
+
+        // Method to display the text field value
+        displayField() {
+          // Get the text field element using id
+          let textField = document.getElementById("text-field-t4");
+          
+          // Assign the text field value
+          textField.value = "User clicks " + this.type;
+        }
+        
+        // Method to display the text message
+        displayMessage() {
+          // Get the text message element using id
+          let textMsg = document.getElementById("text-msg-t4");
+          
+          // Assign the text message to innerHTML and show the element
+          textMsg.innerHTML = this.type + " is clicked";
+
+          // Show the element
+          textMsg.style.display = "block";
+        }
+
+        // Method to display the image
+        displayImage() {
+          // Get the image element using id
+          let imageSrc = document.getElementById("image-t4");
+          
+          // Assign the image source
+          imageSrc.src = this.imageSrc;
+        }
+        
+        // Method to display the image source link
+        displayLink() {
+          // Get the image link element using id
+          let imageLink = document.getElementById("image-link-t4");
+
+          // Assign the image link reference
+          imageLink.href = this.imageLink;
+
+          // Assign the image link innerHTML
+          imageLink.innerHTML = "<br>" + this.imageLink;
+        }
+
+        // Method to display everything when the button is clicked
+        display() {
+          // Call the method to display the text field value
+          this.displayField();
+          
+          // Call the method to display the text message
+          this.displayMessage();
+          
+          // Call the method to display the image
+          this.displayImage();
+          
+          // Call the method to display the image source link
+          this.displayLink();
+        }
+      }
+
+      // Create objects of type Pet for all 3 subjects and assign their attributes
+      const cat = new Pet("Cat", "cat.jpg", "https://en.wikipedia.org/wiki/Ragdoll")
+      const dog = new Pet("Dog", "dog.jpg", "https://www.britannica.com/animal/Bernese-mountain-dog")
+      const frog = new Pet("Frog", "frog.jpg", "https://www.twinkl.com.au/teaching-wiki/frog")
+      
+    </script>
+
+    <style> /* CSS document styles */
+			/* Modify the font styles */
+      h1, h2, h3, h4, div, p, span, th, td, ul, li, a {
+        font-family: "Lato", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+
+			/* Modify horizontal line tag margins */
+      hr {
+        margin: 10px 0px 30px;
+      }
+      
+      /* Task class to add padding */
+      .task {
+        padding: 10px 20px 40px;
+      }
+      
+      /* Change background color for Task 2 for better visual task separation */
+      .task:nth-child(2) {
+        background-color: rgba(0, 0, 0, 0.05);
+      }
+      
+      /* Style Task 1 class as an info card */
+      #task-1-info {
+        width: 960px;
+        margin: auto;
+        padding: 0px 20px;
+        background-color: white;
+        color: rgba(0, 0, 0, 0.8);
+        border-radius: 8px;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.1);
+      }
+      
+      /* Task 2 table class */
+      #task-2-table {
+        width: 1000px;
+        margin: auto;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.1);
+        border-collapse: collapse;
+        background-color: white;
+      }
+      
+      /* Task 2 table header */
+      #task-2-table th {
+        text-align: left;
+        font-size: 20px;
+        font-weight: 600;
+        padding: 10px;
+        background-color: rgb(63, 0, 99);
+        color: rgb(253, 242, 255);
+        border: 1px dotted rgb(253, 242, 255);
+      }
+      
+      /* Task 2 table header first column width */
+      #task-2-table th:nth-child(1) {
+        width: 70%;
+      }
+      
+      /* Task 2 table header second column width */
+      #task-2-table th:nth-child(2) {
+        width: 30%;
+      }
+      
+      /* Task 2 table even rows with a different background color */
+      #task-2-table tr:nth-child(even) {
+        background-color: rgba(208, 0, 255, 0.1);
+      }
+      
+      /* Task 2 table data cells styles */
+      #task-2-table td {
+        padding: 10px;
+        color: rgb(88, 0, 139);
+        border: 1px dotted rgba(208, 0, 255, 0.4);
+      }  
+      
+      /* Create a class for the census link */
+      .census-link:link {
+        font-weight: 600;
+        color: rgb(144, 44, 238);
+        text-decoration: underline;
+      }
+      
+      .census-link:hover {
+        color: rgb(144, 44, 238);
+        text-decoration: none;
+      }
+      
+      .census-link:active {
+        color: rgb(226, 43, 202);
+        text-decoration: none;
+      }
+      
+      .census-link:visited {
+        color: rgb(226, 43, 202);
+        text-decoration: underline;
+      }
+
+      /* Task 3 table class */
+      #task-3-table {
+        width: 1000px;
+        margin: auto;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.1);
+        border-collapse: collapse;
+        background-color: white;
+      }
+
+      /* Task 3 table header */
+      #task-3-table th {
+        text-align: left;
+        font-size: 20px;
+        font-weight: 600;
+        padding: 10px;
+        background-color: rgb(8, 0, 99);
+        color: white;
+        border: 1px solid rgb(233, 232, 255);
+      }
+
+      /* Task 3 table header first column width */
+      #task-3-table th:nth-child(1) {
+        width: 30%;
+      }
+
+      /* Task 3 table header second column width */
+      #task-3-table th:nth-child(2) {
+        width: 70%;
+      }
+
+      /* Task 3 table data cells styles */
+      #task-3-table td {
+        padding: 10px 10px 20px;
+        color: rgb(8, 0, 99);
+        border: 1px solid rgb(8, 0, 99);
+        vertical-align: top;
+      }
+      
+      /* Task 3 table h4 heading style */
+      #task-3-table h4 {
+        font-size: 18px;
+        font-weight: 600;
+      }
+      
+      /* Fix the same width for the attack images */
+      .attack-img {
+        width: 120px;
+      }
+      
+      /* Create a class for the attack links */
+      .attack-link {
+        color: blue;
+        text-decoration: underline;
+      }
+      
+      .attack-link:hover {
+				color: blue;
+        text-decoration: none;
+      }
+
+      .attack-link:active {
+				color: red;
+        text-decoration: none;
+      }
+
+      .attack-link:visited {
+        color: red;
+      }
+
+			/* Task 4 buttons class to modify the default button style */
+			.button-t4 {
+				font-size: 16px;
+				padding: 10px 20px;
+				margin: 0px 10px 20px 0px;
+				background-color: rgb(220, 220, 220);
+				border: 1px solid rgb(180, 180, 180);
+				border-radius: 6px;
+			}
+			
+			/* Task 4 buttons hover style */
+			.button-t4:hover {
+				cursor: pointer;
+				background-color: rgb(235, 235, 235);
+			}
+			
+			/* Task 4 buttons focus style using the button :focus class to highlight the clicked button */
+			.button-t4:focus {
+				background-color: rgb(235, 235, 235);
+        box-shadow: 0px 0px 4px 1px rgb(255, 0, 255);
+			}
+			
+			/* Task 4 text field style */
+			#text-field-t4 {
+				margin-top: 10px;
+				padding: 10px;
+				font-size: 16px;
+			}
+			
+			/* Task 4 text message style */
+			#text-msg-t4 {
+        display: none; /* Does not show the element at page load */
+				margin-top: 10px;
+				padding: 10px;
+				font-size: 16px;
+			}
+			
+			/* Task 4 image style */
+			#image-t4 {
+				width: 600px;
+			}
+			
+			/* Task 4 image source text */
+			#image-link-t4 {
+				font-size: 16px;
+				font-style: italic;
+				margin: 5px;
+			}
+			
+      
+      /* Media changes when the screen is less than 1100px */
+      @media only screen and (max-width: 1100px) {
+        /* Scale the header width from Task 1 */
+        .header {
+          width: 85%;
+        }
+        
+        /* Scale the tables width in Task 2 and 3 */
+        #task-2-table, #task-3-table {
+          width: 90%;
+        }
+        
+      }
+      
+
+    </style>
+  </head>
+
+  <body>
+    <!-- Task 1 -->
+    <div class="task">
+      <h2>Task 1: Use CSS to display the following information</h2>
+      <hr>
+      <br>
+      <!-- Task 1 Info Card -->
+      <div id="task-1-info">
+        <h1>8791028 Calin Borbeli</h1>
+        <h2>COMP804: Web Security</h2>
+        <h3>Assignment 1, Due: Monday, 19 August 2024, 11:00 PM</h3>
+      </div>
+      <br>
+    </div>
+
+    <!-- Task 2 -->
+    <div class="task">
+      <h2>Task 2: Use CSS to style a table</h2>
+      <hr>
+      <br>
+      <!-- Task 2 Table -->
+      <table id="task-2-table">
+        <!-- Task 2 Table Headings -->
+        <thead>
+          <tr>
+            <!-- Task 2 Table First Column Heading -->
+            <th>Activity</th>
+            <!-- Task 2 Table Second Column Heading -->
+            <th>Date</th>
+          </tr>
+        </thead>
+        <!-- Task 2 Table body with rows -->
+        <tbody>
+          <tr>
+            <td>First day to enrol for re-enrolling (continuing students)</td>
+            <td>20 Nov 2023</td>
+          </tr>
+          <tr>
+            <td>Orientation</td>
+            <td>16 Jul 2024</td>
+          </tr>
+          <tr>
+            <td>Lectures Commence (weeks 1-10)</td>
+            <td>22 Jul - 27 Sep 2024</td>
+          </tr>
+          <tr>
+            <td>Last day to enrol / add subjects yourself</td>
+            <td>02 Aug 2024</td>
+          </tr>
+          <tr>
+            <td>Last day to enrol / add subjects with Head of Students approval</td>
+            <td>09 Aug 2024</td>
+          </tr>
+          <tr>
+            <td><strong>CENSUS DATE</strong>
+              <ul>
+                <li>Fees due</li>
+                <li>Last day to withdraw from subject/s without paying for them</li>
+                <li>HECS / FEE HELP debt reporting date</li>
+                <li>Last day to change HECS / FEE HELP billing option</li>
+              </ul>
+              <p>
+                <a class="census-link" href="https://uowedu.service-now.com/kb?id=kb_article_view&amp;sysparm_article=KB0012659" target="_blank">Learn more about Census date &gt;</a>
+              </p>
+            </td>
+            <td>31 Aug 2024</td>
+          </tr>
+          <tr>
+            <td>Student Services and Amenities Fees Due</td>
+            <td>01 Sep 2024</td>
+          </tr>
+          <tr>
+            <td>Last day to withdraw without academic penalty - subject deleted from record
+              <p>Fail grade recorded if subject withdrawn after this date</p>
+            </td>
+            <td>20 Sep 2024</td>
+          </tr>
+          <tr>
+            <td>Mid-Session Recess (1 week)</td>
+            <td>30 Sep - 04 Oct 2024</td>
+          </tr>
+          <tr>
+            <td>Lectures Recommence (weeks 11-13)</td>
+            <td>07 Oct - 25 Oct 2024</td>
+          </tr>
+          <tr>
+            <td>Study Recess (1 week)</td>
+            <td>28 Oct - 01 Nov 2024</td>
+          </tr>
+          <tr>
+            <td>Exams (2 weeks)</td>
+            <td>02 Nov - 14 Nov 2024</td>
+          </tr>
+          <tr>
+            <td>End of session break commences</td>
+            <td>15 Nov 2024</td>
+          </tr>
+          <tr>
+            <td>Release of Results</td>
+            <td>28 Nov 2024</td>
+          </tr>
+          <tr>
+            <td><span>Supplementary and deferred exam period</span></td>
+            <td>09 Dec - 13 Dec 2024</td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+    </div>
+    
+    <!-- Task 3 -->
+    <div class="task">
+      <h2>Task 3: HTML & CSS</h2>
+      <hr>
+      <br>
+      <!-- Task 3 Table -->
+      <table id="task-3-table">
+        <!-- Task 3 Table Headings -->
+        <thead>
+          <tr>
+            <!-- Task 3 Table First Column Heading -->
+            <th>Name</th>
+            <!-- Task 3 Table Second Column Heading -->
+            <th>Web Attacks</th>
+          </tr>
+        </thead>
+        <!-- Task 3 Table body with rows -->
+        <tbody>
+          <tr>
+            <td>
+              <h4>A01 - Broken Access Control</h4>
+              <img class="attack-img" src="Broken_Access_Control.png" alt="Broken_Access_Control" />
+              <p>Source: https://owasp.org/Top10/A01_2021-Broken_Access_Control/</p>
+            </td>
+            <td>
+              <h4>Description of Broken Access Control:</h4>
+              <p>Access control enforces policy such that users cannot act outside of their intended permissions.<br><br>
+                Failures typically lead to unauthorized information disclosure, modification,
+                or destruction of all data or performing a business function outside the user's limits.<br><br>
+                Common access control vulnerabilities include violation of the principle of least privilege or deny by default,
+                bypassing access control checks by modifying the URL, permitting viewing or editing someone else's account, etc.<br><br>
+                Access control is only effective in trusted server-side code or server-less API,
+                where the attacker cannot modify the access control check or metadata.
+              </p>
+              <a class="attack-link" href="https://owasp.org/Top10/A01_2021-Broken_Access_Control/" target="_blank">https://owasp.org/Top10/A01_2021-Broken_Access_Control/</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <h4>A02 - Cryptographic Failures</h4>
+              <img class="attack-img" src="Crypto_Failures.png" alt="Crypto_Failures" />
+              <p>Source: https://owasp.org/Top10/A02_2021-Cryptographic_Failures/</p>
+            </td>
+            <td>
+              <h4>Description of Cryptographic Failures:</h4>
+              <p>The first thing is to determine the protection needs of data in transit and at rest.
+                For example, passwords, credit card numbers, health records, personal information,
+                and business secrets require extra protection, mainly if that data falls under privacy laws or regulations.<br><br>
+                For all such data is any data transmitted in clear text, are any old or weak cryptographic algorithms or protocols, 
+                are default crypto keys in use, weak crypto keys generated or re-used, is encryption not enforced, etc?<br><br>
+                At a minimum identify which data is sensitive, don't store sensitive data unnecessarily, encrypt all sensitive data at rest, 
+                ensure up-to-date and strong standard algorithms, protocols, and keys are in place, encrypt all data in transit with secure protocols, etc.
+              </p>
+              <a class="attack-link" href="https://owasp.org/Top10/A02_2021-Cryptographic_Failures/" target="_blank">https://owasp.org/Top10/A02_2021-Cryptographic_Failures/</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <h4>A03 - Injection</h4>
+              <img class="attack-img" src="Injection.png" alt="Injection" />
+              <p>Source: https://owasp.org/Top10/A03_2021-Injection/</p>
+            </td>
+            <td>
+              <h4>Description of Injection:</h4>
+              <p>An application is vulnerable to attack when User-supplied data is not validated, filtered, or sanitized by the application, 
+                dynamic queries or non-parameterized calls without context-aware escaping are used directly in the interpreter, 
+                hostile data is directly used or concatenated, etc.<br><br>
+                Some of the more common injections are SQL, NoSQL, OS command, Object Relational Mapping (ORM), LDAP, 
+                and Expression Language (EL) or Object Graph Navigation Library (OGNL) injection.<br><br>
+                Preventing injection requires keeping data separate from commands and queries. The preferred option is to use a safe API, 
+                use positive server-side input validation, escape special characters, etc.
+              </p>
+              <a class="attack-link" href="https://owasp.org/Top10/A03_2021-Injection/" target="_blank">https://owasp.org/Top10/A03_2021-Injection/</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <h4>A04 - Insecure Design</h4>
+              <img class="attack-img" src="Insecure_Design.png" alt="Insecure_Design" />
+              <p>Source: https://owasp.org/Top10/A04_2021-Insecure_Design/</p>
+            </td>
+            <td>
+              <h4>Description of Insecure Design:</h4>
+              <p>Insecure design is a broad category representing different weaknesses, expressed as “missing or ineffective control design”.<br><br>
+                One of the factors that contribute to insecure design is the lack of business risk profiling inherent in the software or system being developed, 
+                and thus the failure to determine what level of security design is required.<br><br>
+                Secure design is a culture and methodology that constantly evaluates threats and ensures that code is robustly designed 
+                and tested to prevent known attack methods.<br><br>
+                Secure software requires a secure development lifecycle, some form of secure design pattern, paved road methodology, 
+                secured component library, tooling, and threat modeling.
+              </p>
+              <a class="attack-link" href="https://owasp.org/Top10/A04_2021-Insecure_Design/" target="_blank">https://owasp.org/Top10/A04_2021-Insecure_Design/</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <h4>A05 - Security Misconfiguration</h4>
+              <img class="attack-img" src="Security_Misconfiguration.png" alt="Security_Misconfiguration" />
+              <p>Source: https://owasp.org/Top10/A05_2021-Security_Misconfiguration/</p>
+            </td>
+            <td>
+              <h4>Description of Security Misconfiguration:</h4>
+              <p>The application might be vulnerable if the application is missing appropriate security hardening, unnecessary features are enabled or installed, 
+                default accounts and their passwords are still enabled and unchanged, the latest security features are disabled or not configured securely, 
+                the server does not send security headers or directives, the software is out of date or vulnerable, etc.<br><br>
+                Without a concerted, repeatable application security configuration process, systems are at a higher risk.<br><br>
+                Secure installation processes should be implemented, including a repeatable hardening process makes it fast and easy to deploy another environment 
+                that is appropriately locked down, a minimal platform without any unnecessary features, components, documentation, and samples 
+                a segmented application architecture provides effective and secure separation between components or tenants, etc.
+              </p>
+              <a class="attack-link" href="https://owasp.org/Top10/A05_2021-Security_Misconfiguration/" target="_blank">https://owasp.org/Top10/A05_2021-Security_Misconfiguration/</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <h4>A06 - Vulnerable and Outdated Components</h4>
+              <img class="attack-img" src="Vulnerable_Outdated_Components.png" alt="Vulnerable_Outdated_Components" />
+              <p>Source: https://owasp.org/Top10/A06_2021-Vulnerable_and_Outdated_Components/</p>
+            </td>
+            <td>
+              <h4>Description of Vulnerable and Outdated Components:</h4>
+              <p>You are likely vulnerable if you do not know the versions of all components you use (both client-side and server-side), 
+                if the software is vulnerable, unsupported, or out of date, if you do not scan for vulnerabilities regularly, 
+                if you do not fix or upgrade the underlying platform, etc.<br><br>
+                There should be a patch management process in place to Remove unused dependencies, unnecessary features, components, files, and documentation, 
+                continuously inventory the versions of both client-side and server-side components, Only obtain components from official sources over secure links, etc.<br><br>
+                Every organization must ensure an ongoing plan for monitoring, triaging, 
+                and applying updates or configuration changes for the lifetime of the application or portfolio.
+              </p>
+              <a class="attack-link" href="https://owasp.org/Top10/A06_2021-Vulnerable_and_Outdated_Components/" target="_blank">https://owasp.org/Top10/A06_2021-Vulnerable_and_Outdated_Components/</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <h4>A07 - Identification and Authentication Failures</h4>
+              <img class="attack-img" src="Identification_and_Authentication_Failures.png" alt="Identification_and_Authentication_Failures" />
+              <p>Source: https://owasp.org/Top10/A07_2021-Identification_and_Authentication_Failures/</p>
+            </td>
+            <td>
+              <h4>Description of Identification and Authentication Failures:</h4>
+              <p>Confirmation of the user's identity, authentication, and session management is critical to protect against authentication-related attacks.<br><br>
+                There may be authentication weaknesses if the application permits automated attacks such as credential stuffing, 
+                where the attacker has a list of valid usernames and passwords, permits brute force or other automated attacks, permits default, weak, or well-known passwords, 
+                uses plain text, encrypted, or weakly hashed passwords data stores, has missing or ineffective multi-factor authentication, 
+                exposes session identifier in the URL, etc.<br><br>
+                Where possible, implement multi-factor authentication to prevent automated credential stuffing, brute force, and stolen credential reuse attacks, 
+                do not ship or deploy with any default credentials, particularly for admin users, implement weak password checks, limit or increasingly delay failed login attempts, 
+                Use a server-side, secure, built-in session manager that generates a new random session ID with high entropy after login, etc.
+              </p>
+              <a class="attack-link" href="https://owasp.org/Top10/A07_2021-Identification_and_Authentication_Failures/" target="_blank">https://owasp.org/Top10/A07_2021-Identification_and_Authentication_Failures/</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <h4>A08 - Software and Data Integrity Failures</h4>
+              <img class="attack-img" src="Software_and_Data_Integrity_Failures.png" alt="Software_and_Data_Integrity_Failures" />
+              <p>Source: https://owasp.org/Top10/A08_2021-Software_and_Data_Integrity_Failures/</p>
+            </td>
+            <td>
+              <h4>Description of Software and Data Integrity Failures:</h4>
+              <p>Software and data integrity failures relate to code and infrastructure that does not protect against integrity violations. 
+                An example of this is where an application relies upon plugins, libraries, or modules from untrusted sources, repositories, and content delivery networks (CDNs). 
+                An insecure CI/CD pipeline can introduce the potential for unauthorized access, malicious code, or system compromise.<br><br>
+                Many applications now include auto-update functionality, where updates are downloaded without sufficient integrity verification and 
+                applied to the previously trusted application. Attackers could potentially upload their own updates to be distributed and run on all installations. 
+                Another example is where objects or data are encoded or serialized into a structure that an attacker can see and modify is vulnerable to insecure deserialization.<br><br>
+                Use digital signatures or similar mechanisms to verify the software or data is from the expected source and has not been altered, 
+                ensure libraries and dependencies, such as npm or Maven, are consuming trusted repositories, 
+                ensure that there is a review process for code and configuration changes to minimize the chance that malicious code or 
+                configuration could be introduced into your software pipeline, etc.
+              </p>
+              <a class="attack-link" href="https://owasp.org/Top10/A08_2021-Software_and_Data_Integrity_Failures/" target="_blank">https://owasp.org/Top10/A08_2021-Software_and_Data_Integrity_Failures/</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <h4>A09 - Security Logging and Monitoring Failures</h4>
+              <img class="attack-img" src="Security_Logging_and_Monitoring_Failures.png" alt="Security_Logging_and_Monitoring_Failures" />
+              <p>Source: https://owasp.org/Top10/A09_2021-Security_Logging_and_Monitoring_Failures/</p>
+            </td>
+            <td>
+              <h4>Description of Security Logging and Monitoring Failures:</h4>
+              <p>This category is to help detect, escalate, and respond to active breaches. Without logging and monitoring, breaches cannot be detected.<br><br>
+                Insufficient logging, detection, monitoring, and active response occurs any time Auditable events, such as logins, failed logins, 
+                and high-value transactions, are not logged, warnings and errors generate no, inadequate, or unclear log messages, 
+                logs of applications and APIs are not monitored for suspicious activity, logs are only stored locally, etc.<br><br>
+                Developers should Ensure all login, access control, and server-side input validation failures can be logged with sufficient user context 
+                to identify suspicious or malicious accounts and held for enough time to allow delayed forensic analysis, 
+                ensure that logs are generated in a format that log management solutions can easily consume, 
+                ensure high-value transactions have an audit trail with integrity controls to prevent tampering or deletion, etc.
+              </p>
+              <a class="attack-link" href="https://owasp.org/Top10/A09_2021-Security_Logging_and_Monitoring_Failures/" target="_blank">https://owasp.org/Top10/A09_2021-Security_Logging_and_Monitoring_Failures/</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <h4>A10 - Server-Side Request Forgery (SSRF)</h4>
+              <img class="attack-img" src="SSRF.png" alt="SSRF" />
+              <p>Source: https://owasp.org/Top10/A10_2021-Server-Side_Request_Forgery_%28SSRF%29/</p>
+            </td>
+            <td>
+              <h4>Description of Server-Side Request Forgery (SSRF):</h4>
+              <p>SSRF flaws occur whenever a web application is fetching a remote resource without validating the user-supplied URL. 
+                It allows an attacker to coerce the application to send a crafted request to an unexpected destination, 
+                even when protected by a firewall, VPN, or another type of network access control list (ACL).<br><br>
+                As modern web applications provide end-users with convenient features, fetching a URL becomes a common scenario. 
+                As a result, the incidence of SSRF is increasing. 
+                Also, the severity of SSRF is becoming higher due to cloud services and the complexity of architectures.<br><br>
+                Developers can prevent SSRF by segmenting remote resource access functionality in separate networks to reduce the impact of SSRF, 
+                enforce “deny by default” firewall policies or network access control rules to block all but essential intranet traffic, 
+                sanitize and validate all client-supplied input data, enforce the URL schema, port, and destination with a positive allow list, 
+                do not send raw responses to clients, disable HTTP redirections, etc.
+              </p>
+              <a class="attack-link" href="https://owasp.org/Top10/A10_2021-Server-Side_Request_Forgery_%28SSRF%29/" target="_blank">https://owasp.org/Top10/A10_2021-Server-Side_Request_Forgery_%28SSRF%29/</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+    </div>
+
+    <!-- Task 4 -->
+    <div class="task">
+      <h2>Task 4: Javascript with button</h2>
+      <hr>
+      <!-- Task 4 buttons -->
+      <!-- The buttons 'onclick' event calls their respective pet object 'display' method -->
+      <button class="button-t4" onclick="cat.display()">Cat</button>
+      <button class="button-t4" onclick="dog.display()">Dog</button>
+      <button class="button-t4" onclick="frog.display()">Frog</button>
+      <br>
+      <!-- Task 4 text field -->
+      <input type="text" id="text-field-t4">
+      <!-- Task 4 text message -->
+      <p id="text-msg-t4"></p>
+      <!-- Task 4 image -->
+      <img id="image-t4">
+      <!-- Task 4 image reference link -->
+      <a id="image-link-t4" href="" target="_blank"></a>
+      <br>
+    </div>
+
+
+
+    <!-- Task 5 -->
+    <div class="task">
+      <h2>Task 5: Gihub repository</h2>
+      <hr>
+      <br>
+      <div id="task-5">
+        Gihub Repository Report
+      </div>
+      <br>
+    </div>
+
+  </body>
+
+</html>
