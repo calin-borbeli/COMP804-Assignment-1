@@ -247,27 +247,27 @@
       }
       
       /* Fix the same width for the attack images */
-      .attack-img {
+      .attack-img-t4 {
         width: 120px;
       }
       
       /* Create a class for the attack links */
-      .attack-link {
+      .attack-link-t4 {
         color: blue;
         text-decoration: underline;
       }
       
-      .attack-link:hover {
+      .attack-link-t4:hover {
 				color: blue;
         text-decoration: none;
       }
 
-      .attack-link:active {
+      .attack-link-t4:active {
 				color: red;
         text-decoration: none;
       }
 
-      .attack-link:visited {
+      .attack-link-t4:visited {
         color: red;
       }
 
@@ -313,13 +313,49 @@
 				width: 600px;
 			}
 			
-			/* Task 4 image source text */
+			/* Task 4 image source reference text */
 			#image-link-t4 {
 				font-size: 16px;
 				font-style: italic;
 				margin: 5px;
+        color: blue;
+        text-decoration: underline;
 			}
 			
+      #image-link-t4:hover {
+				color: blue;
+        text-decoration: none;
+      }
+
+      #image-link-t4:active {
+				color: red;
+        text-decoration: none;
+      }
+
+      #image-link-t4:visited {
+        color: red;
+      }
+      
+			/* Task 5 report link */
+			#report-link-t5 {
+				font-size: 20px;
+        color: blue;
+        text-decoration: underline;
+			}
+
+      #report-link-t5:hover {
+				color: blue;
+        text-decoration: none;
+      }
+
+      #report-link-t5:active {
+				color: red;
+        text-decoration: none;
+      }
+
+      #report-link-t5:visited {
+        color: red;
+      }
       
       /* Media changes when the screen is less than 1100px */
       @media only screen and (max-width: 1100px) {
@@ -470,7 +506,7 @@
           <tr>
             <td>
               <h4>A01 - Broken Access Control</h4>
-              <img class="attack-img" src="Broken_Access_Control.png" alt="Broken_Access_Control" />
+              <img class="attack-img-t4" src="Broken_Access_Control.png" alt="Broken_Access_Control" />
               <p>Source: https://owasp.org/Top10/A01_2021-Broken_Access_Control/</p>
             </td>
             <td>
@@ -483,13 +519,13 @@
                 Access control is only effective in trusted server-side code or server-less API,
                 where the attacker cannot modify the access control check or metadata.
               </p>
-              <a class="attack-link" href="https://owasp.org/Top10/A01_2021-Broken_Access_Control/" target="_blank">https://owasp.org/Top10/A01_2021-Broken_Access_Control/</a>
+              <a class="attack-link-t4" href="https://owasp.org/Top10/A01_2021-Broken_Access_Control/" target="_blank">https://owasp.org/Top10/A01_2021-Broken_Access_Control/</a>
             </td>
           </tr>
           <tr>
             <td>
               <h4>A02 - Cryptographic Failures</h4>
-              <img class="attack-img" src="Crypto_Failures.png" alt="Crypto_Failures" />
+              <img class="attack-img-t4" src="Crypto_Failures.png" alt="Crypto_Failures" />
               <p>Source: https://owasp.org/Top10/A02_2021-Cryptographic_Failures/</p>
             </td>
             <td>
@@ -502,13 +538,13 @@
                 At a minimum identify which data is sensitive, don't store sensitive data unnecessarily, encrypt all sensitive data at rest, 
                 ensure up-to-date and strong standard algorithms, protocols, and keys are in place, encrypt all data in transit with secure protocols, etc.
               </p>
-              <a class="attack-link" href="https://owasp.org/Top10/A02_2021-Cryptographic_Failures/" target="_blank">https://owasp.org/Top10/A02_2021-Cryptographic_Failures/</a>
+              <a class="attack-link-t4" href="https://owasp.org/Top10/A02_2021-Cryptographic_Failures/" target="_blank">https://owasp.org/Top10/A02_2021-Cryptographic_Failures/</a>
             </td>
           </tr>
           <tr>
             <td>
               <h4>A03 - Injection</h4>
-              <img class="attack-img" src="Injection.png" alt="Injection" />
+              <img class="attack-img-t4" src="Injection.png" alt="Injection" />
               <p>Source: https://owasp.org/Top10/A03_2021-Injection/</p>
             </td>
             <td>
@@ -521,13 +557,13 @@
                 Preventing injection requires keeping data separate from commands and queries. The preferred option is to use a safe API, 
                 use positive server-side input validation, escape special characters, etc.
               </p>
-              <a class="attack-link" href="https://owasp.org/Top10/A03_2021-Injection/" target="_blank">https://owasp.org/Top10/A03_2021-Injection/</a>
+              <a class="attack-link-t4" href="https://owasp.org/Top10/A03_2021-Injection/" target="_blank">https://owasp.org/Top10/A03_2021-Injection/</a>
             </td>
           </tr>
           <tr>
             <td>
               <h4>A04 - Insecure Design</h4>
-              <img class="attack-img" src="Insecure_Design.png" alt="Insecure_Design" />
+              <img class="attack-img-t4" src="Insecure_Design.png" alt="Insecure_Design" />
               <p>Source: https://owasp.org/Top10/A04_2021-Insecure_Design/</p>
             </td>
             <td>
@@ -540,13 +576,13 @@
                 Secure software requires a secure development lifecycle, some form of secure design pattern, paved road methodology, 
                 secured component library, tooling, and threat modeling.
               </p>
-              <a class="attack-link" href="https://owasp.org/Top10/A04_2021-Insecure_Design/" target="_blank">https://owasp.org/Top10/A04_2021-Insecure_Design/</a>
+              <a class="attack-link-t4" href="https://owasp.org/Top10/A04_2021-Insecure_Design/" target="_blank">https://owasp.org/Top10/A04_2021-Insecure_Design/</a>
             </td>
           </tr>
           <tr>
             <td>
               <h4>A05 - Security Misconfiguration</h4>
-              <img class="attack-img" src="Security_Misconfiguration.png" alt="Security_Misconfiguration" />
+              <img class="attack-img-t4" src="Security_Misconfiguration.png" alt="Security_Misconfiguration" />
               <p>Source: https://owasp.org/Top10/A05_2021-Security_Misconfiguration/</p>
             </td>
             <td>
@@ -559,13 +595,13 @@
                 that is appropriately locked down, a minimal platform without any unnecessary features, components, documentation, and samples 
                 a segmented application architecture provides effective and secure separation between components or tenants, etc.
               </p>
-              <a class="attack-link" href="https://owasp.org/Top10/A05_2021-Security_Misconfiguration/" target="_blank">https://owasp.org/Top10/A05_2021-Security_Misconfiguration/</a>
+              <a class="attack-link-t4" href="https://owasp.org/Top10/A05_2021-Security_Misconfiguration/" target="_blank">https://owasp.org/Top10/A05_2021-Security_Misconfiguration/</a>
             </td>
           </tr>
           <tr>
             <td>
               <h4>A06 - Vulnerable and Outdated Components</h4>
-              <img class="attack-img" src="Vulnerable_Outdated_Components.png" alt="Vulnerable_Outdated_Components" />
+              <img class="attack-img-t4" src="Vulnerable_Outdated_Components.png" alt="Vulnerable_Outdated_Components" />
               <p>Source: https://owasp.org/Top10/A06_2021-Vulnerable_and_Outdated_Components/</p>
             </td>
             <td>
@@ -578,13 +614,13 @@
                 Every organization must ensure an ongoing plan for monitoring, triaging, 
                 and applying updates or configuration changes for the lifetime of the application or portfolio.
               </p>
-              <a class="attack-link" href="https://owasp.org/Top10/A06_2021-Vulnerable_and_Outdated_Components/" target="_blank">https://owasp.org/Top10/A06_2021-Vulnerable_and_Outdated_Components/</a>
+              <a class="attack-link-t4" href="https://owasp.org/Top10/A06_2021-Vulnerable_and_Outdated_Components/" target="_blank">https://owasp.org/Top10/A06_2021-Vulnerable_and_Outdated_Components/</a>
             </td>
           </tr>
           <tr>
             <td>
               <h4>A07 - Identification and Authentication Failures</h4>
-              <img class="attack-img" src="Identification_and_Authentication_Failures.png" alt="Identification_and_Authentication_Failures" />
+              <img class="attack-img-t4" src="Identification_and_Authentication_Failures.png" alt="Identification_and_Authentication_Failures" />
               <p>Source: https://owasp.org/Top10/A07_2021-Identification_and_Authentication_Failures/</p>
             </td>
             <td>
@@ -598,13 +634,13 @@
                 do not ship or deploy with any default credentials, particularly for admin users, implement weak password checks, limit or increasingly delay failed login attempts, 
                 Use a server-side, secure, built-in session manager that generates a new random session ID with high entropy after login, etc.
               </p>
-              <a class="attack-link" href="https://owasp.org/Top10/A07_2021-Identification_and_Authentication_Failures/" target="_blank">https://owasp.org/Top10/A07_2021-Identification_and_Authentication_Failures/</a>
+              <a class="attack-link-t4" href="https://owasp.org/Top10/A07_2021-Identification_and_Authentication_Failures/" target="_blank">https://owasp.org/Top10/A07_2021-Identification_and_Authentication_Failures/</a>
             </td>
           </tr>
           <tr>
             <td>
               <h4>A08 - Software and Data Integrity Failures</h4>
-              <img class="attack-img" src="Software_and_Data_Integrity_Failures.png" alt="Software_and_Data_Integrity_Failures" />
+              <img class="attack-img-t4" src="Software_and_Data_Integrity_Failures.png" alt="Software_and_Data_Integrity_Failures" />
               <p>Source: https://owasp.org/Top10/A08_2021-Software_and_Data_Integrity_Failures/</p>
             </td>
             <td>
@@ -620,13 +656,13 @@
                 ensure that there is a review process for code and configuration changes to minimize the chance that malicious code or 
                 configuration could be introduced into your software pipeline, etc.
               </p>
-              <a class="attack-link" href="https://owasp.org/Top10/A08_2021-Software_and_Data_Integrity_Failures/" target="_blank">https://owasp.org/Top10/A08_2021-Software_and_Data_Integrity_Failures/</a>
+              <a class="attack-link-t4" href="https://owasp.org/Top10/A08_2021-Software_and_Data_Integrity_Failures/" target="_blank">https://owasp.org/Top10/A08_2021-Software_and_Data_Integrity_Failures/</a>
             </td>
           </tr>
           <tr>
             <td>
               <h4>A09 - Security Logging and Monitoring Failures</h4>
-              <img class="attack-img" src="Security_Logging_and_Monitoring_Failures.png" alt="Security_Logging_and_Monitoring_Failures" />
+              <img class="attack-img-t4" src="Security_Logging_and_Monitoring_Failures.png" alt="Security_Logging_and_Monitoring_Failures" />
               <p>Source: https://owasp.org/Top10/A09_2021-Security_Logging_and_Monitoring_Failures/</p>
             </td>
             <td>
@@ -640,13 +676,13 @@
                 ensure that logs are generated in a format that log management solutions can easily consume, 
                 ensure high-value transactions have an audit trail with integrity controls to prevent tampering or deletion, etc.
               </p>
-              <a class="attack-link" href="https://owasp.org/Top10/A09_2021-Security_Logging_and_Monitoring_Failures/" target="_blank">https://owasp.org/Top10/A09_2021-Security_Logging_and_Monitoring_Failures/</a>
+              <a class="attack-link-t4" href="https://owasp.org/Top10/A09_2021-Security_Logging_and_Monitoring_Failures/" target="_blank">https://owasp.org/Top10/A09_2021-Security_Logging_and_Monitoring_Failures/</a>
             </td>
           </tr>
           <tr>
             <td>
               <h4>A10 - Server-Side Request Forgery (SSRF)</h4>
-              <img class="attack-img" src="SSRF.png" alt="SSRF" />
+              <img class="attack-img-t4" src="SSRF.png" alt="SSRF" />
               <p>Source: https://owasp.org/Top10/A10_2021-Server-Side_Request_Forgery_%28SSRF%29/</p>
             </td>
             <td>
@@ -662,7 +698,7 @@
                 sanitize and validate all client-supplied input data, enforce the URL schema, port, and destination with a positive allow list, 
                 do not send raw responses to clients, disable HTTP redirections, etc.
               </p>
-              <a class="attack-link" href="https://owasp.org/Top10/A10_2021-Server-Side_Request_Forgery_%28SSRF%29/" target="_blank">https://owasp.org/Top10/A10_2021-Server-Side_Request_Forgery_%28SSRF%29/</a>
+              <a class="attack-link-t4" href="https://owasp.org/Top10/A10_2021-Server-Side_Request_Forgery_%28SSRF%29/" target="_blank">https://owasp.org/Top10/A10_2021-Server-Side_Request_Forgery_%28SSRF%29/</a>
             </td>
           </tr>
         </tbody>
@@ -699,7 +735,8 @@
       <hr>
       <br>
       <div id="task-5">
-        Gihub Repository Report
+        <!-- Link to Assignment Report -->
+        <a id="report-link-t5" href="./Assignment_1_Report.pdf" target="_blank">Link to Assignment 1 Report</a>
       </div>
       <br>
     </div>
