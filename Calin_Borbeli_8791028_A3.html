@@ -21,14 +21,17 @@
     <script>
       // Task 4 Javascript code
 
+      // ****************************************************************************
       // The 3 subjects in Task 4 can all be included in a class of type 'Pet'
-      // as they all have properties like the type, image source and reference
+      // as they all have the same properties type, image source and link reference
       // and they all need to perform the same actions when the buttons are clicked.
-      // Therefore, rather than using Functional programming I decided that it is 
+      // Therefore, rather than using Functional Programming I decided that it is 
       // more appropriate to use OOP.
+      // ****************************************************************************
+
       // I created a class for the Pet type objects
       class Pet {
-        // I created a constructor method for the 3 properties: type, image source,
+        // I used the constructor method to create the 3 properties: type, image source,
         // and image link for the reference source
         constructor(type, imageSrc, imageLink){
           this.type = type;
@@ -125,7 +128,7 @@
       }
       
       /* Style Task 1 class as an info card */
-      #task-1-info {
+      #info-card-t1 {
         width: 960px;
         margin: auto;
         padding: 0px 20px;
@@ -137,7 +140,7 @@
       }
       
       /* Task 2 table class */
-      #task-2-table {
+      #table-t2 {
         width: 1000px;
         margin: auto;
         border: 1px solid rgba(0, 0, 0, 0.2);
@@ -147,7 +150,7 @@
       }
       
       /* Task 2 table header */
-      #task-2-table th {
+      #table-t2 th {
         text-align: left;
         font-size: 20px;
         font-weight: 600;
@@ -158,51 +161,51 @@
       }
       
       /* Task 2 table header first column width */
-      #task-2-table th:nth-child(1) {
+      #table-t2 th:nth-child(1) {
         width: 70%;
       }
       
       /* Task 2 table header second column width */
-      #task-2-table th:nth-child(2) {
+      #table-t2 th:nth-child(2) {
         width: 30%;
       }
       
       /* Task 2 table even rows with a different background color */
-      #task-2-table tr:nth-child(even) {
+      #table-t2 tr:nth-child(even) {
         background-color: rgba(208, 0, 255, 0.1);
       }
       
       /* Task 2 table data cells styles */
-      #task-2-table td {
+      #table-t2 td {
         padding: 10px;
         color: rgb(88, 0, 139);
         border: 1px dotted rgba(208, 0, 255, 0.4);
       }  
       
       /* Create a class for the census link */
-      .census-link:link {
+      .census-link-t2:link {
         font-weight: 600;
         color: rgb(144, 44, 238);
         text-decoration: underline;
       }
       
-      .census-link:hover {
+      .census-link-t2:hover {
         color: rgb(144, 44, 238);
         text-decoration: none;
       }
       
-      .census-link:active {
+      .census-link-t2:active {
         color: rgb(226, 43, 202);
         text-decoration: none;
       }
       
-      .census-link:visited {
+      .census-link-t2:visited {
         color: rgb(226, 43, 202);
         text-decoration: underline;
       }
 
       /* Task 3 table class */
-      #task-3-table {
+      #table-t3 {
         width: 1000px;
         margin: auto;
         border: 1px solid rgba(0, 0, 0, 0.2);
@@ -212,7 +215,7 @@
       }
 
       /* Task 3 table header */
-      #task-3-table th {
+      #table-t3 th {
         text-align: left;
         font-size: 20px;
         font-weight: 600;
@@ -223,17 +226,17 @@
       }
 
       /* Task 3 table header first column width */
-      #task-3-table th:nth-child(1) {
+      #table-t3 th:nth-child(1) {
         width: 30%;
       }
 
       /* Task 3 table header second column width */
-      #task-3-table th:nth-child(2) {
+      #table-t3 th:nth-child(2) {
         width: 70%;
       }
 
       /* Task 3 table data cells styles */
-      #task-3-table td {
+      #table-t3 td {
         padding: 10px 10px 20px;
         color: rgb(8, 0, 99);
         border: 1px solid rgb(8, 0, 99);
@@ -241,33 +244,33 @@
       }
       
       /* Task 3 table h4 heading style */
-      #task-3-table h4 {
+      #table-t3 h4 {
         font-size: 18px;
         font-weight: 600;
       }
       
       /* Fix the same width for the attack images */
-      .attack-img-t4 {
+      .attack-img-t3 {
         width: 120px;
       }
       
       /* Create a class for the attack links */
-      .attack-link-t4 {
+      .attack-link-t3 {
         color: blue;
         text-decoration: underline;
       }
       
-      .attack-link-t4:hover {
+      .attack-link-t3:hover {
 				color: blue;
         text-decoration: none;
       }
 
-      .attack-link-t4:active {
+      .attack-link-t3:active {
 				color: red;
         text-decoration: none;
       }
 
-      .attack-link-t4:visited {
+      .attack-link-t3:visited {
         color: red;
       }
 
@@ -302,10 +305,8 @@
 			
 			/* Task 4 text message style */
 			#text-msg-t4 {
-        display: none; /* Does not show the element at page load */
-				margin-top: 10px;
-				padding: 10px;
-				font-size: 16px;
+        display: none; /* Does not show the element at page load time and it will be shown during JS execution */
+				padding: 20px 10px;
 			}
 			
 			/* Task 4 image style */
@@ -359,13 +360,13 @@
       
       /* Media changes when the screen is less than 1100px */
       @media only screen and (max-width: 1100px) {
-        /* Scale the header width from Task 1 */
-        .header {
+        /* Scale the info card width from Task 1 */
+        #info-card-t1 {
           width: 85%;
         }
         
         /* Scale the tables width in Task 2 and 3 */
-        #task-2-table, #task-3-table {
+        #table-t2, #table-t3 {
           width: 90%;
         }
         
@@ -382,7 +383,7 @@
       <hr>
       <br>
       <!-- Task 1 Info Card -->
-      <div id="task-1-info">
+      <div id="info-card-t1">
         <h1>8791028 Calin Borbeli</h1>
         <h2>COMP804: Web Security</h2>
         <h3>Assignment 1, Due: Monday, 19 August 2024, 11:00 PM</h3>
@@ -396,7 +397,7 @@
       <hr>
       <br>
       <!-- Task 2 Table -->
-      <table id="task-2-table">
+      <table id="table-t2">
         <!-- Task 2 Table Headings -->
         <thead>
           <tr>
@@ -437,7 +438,7 @@
                 <li>Last day to change HECS / FEE HELP billing option</li>
               </ul>
               <p>
-                <a class="census-link" href="https://uowedu.service-now.com/kb?id=kb_article_view&amp;sysparm_article=KB0012659" target="_blank">Learn more about Census date &gt;</a>
+                <a class="census-link-t2" href="https://uowedu.service-now.com/kb?id=kb_article_view&amp;sysparm_article=KB0012659" target="_blank">Learn more about Census date &gt;</a>
               </p>
             </td>
             <td>31 Aug 2024</td>
@@ -491,7 +492,7 @@
       <hr>
       <br>
       <!-- Task 3 Table -->
-      <table id="task-3-table">
+      <table id="table-t3">
         <!-- Task 3 Table Headings -->
         <thead>
           <tr>
@@ -506,7 +507,7 @@
           <tr>
             <td>
               <h4>A01 - Broken Access Control</h4>
-              <img class="attack-img-t4" src="Broken_Access_Control.png" alt="Broken_Access_Control" />
+              <img class="attack-img-t3" src="Broken_Access_Control.png" alt="Broken_Access_Control" />
               <p>Source: https://owasp.org/Top10/A01_2021-Broken_Access_Control/</p>
             </td>
             <td>
@@ -519,13 +520,13 @@
                 Access control is only effective in trusted server-side code or server-less API,
                 where the attacker cannot modify the access control check or metadata.
               </p>
-              <a class="attack-link-t4" href="https://owasp.org/Top10/A01_2021-Broken_Access_Control/" target="_blank">https://owasp.org/Top10/A01_2021-Broken_Access_Control/</a>
+              <a class="attack-link-t3" href="https://owasp.org/Top10/A01_2021-Broken_Access_Control/" target="_blank">https://owasp.org/Top10/A01_2021-Broken_Access_Control/</a>
             </td>
           </tr>
           <tr>
             <td>
               <h4>A02 - Cryptographic Failures</h4>
-              <img class="attack-img-t4" src="Crypto_Failures.png" alt="Crypto_Failures" />
+              <img class="attack-img-t3" src="Crypto_Failures.png" alt="Crypto_Failures" />
               <p>Source: https://owasp.org/Top10/A02_2021-Cryptographic_Failures/</p>
             </td>
             <td>
@@ -538,13 +539,13 @@
                 At a minimum identify which data is sensitive, don't store sensitive data unnecessarily, encrypt all sensitive data at rest, 
                 ensure up-to-date and strong standard algorithms, protocols, and keys are in place, encrypt all data in transit with secure protocols, etc.
               </p>
-              <a class="attack-link-t4" href="https://owasp.org/Top10/A02_2021-Cryptographic_Failures/" target="_blank">https://owasp.org/Top10/A02_2021-Cryptographic_Failures/</a>
+              <a class="attack-link-t3" href="https://owasp.org/Top10/A02_2021-Cryptographic_Failures/" target="_blank">https://owasp.org/Top10/A02_2021-Cryptographic_Failures/</a>
             </td>
           </tr>
           <tr>
             <td>
               <h4>A03 - Injection</h4>
-              <img class="attack-img-t4" src="Injection.png" alt="Injection" />
+              <img class="attack-img-t3" src="Injection.png" alt="Injection" />
               <p>Source: https://owasp.org/Top10/A03_2021-Injection/</p>
             </td>
             <td>
@@ -557,13 +558,13 @@
                 Preventing injection requires keeping data separate from commands and queries. The preferred option is to use a safe API, 
                 use positive server-side input validation, escape special characters, etc.
               </p>
-              <a class="attack-link-t4" href="https://owasp.org/Top10/A03_2021-Injection/" target="_blank">https://owasp.org/Top10/A03_2021-Injection/</a>
+              <a class="attack-link-t3" href="https://owasp.org/Top10/A03_2021-Injection/" target="_blank">https://owasp.org/Top10/A03_2021-Injection/</a>
             </td>
           </tr>
           <tr>
             <td>
               <h4>A04 - Insecure Design</h4>
-              <img class="attack-img-t4" src="Insecure_Design.png" alt="Insecure_Design" />
+              <img class="attack-img-t3" src="Insecure_Design.png" alt="Insecure_Design" />
               <p>Source: https://owasp.org/Top10/A04_2021-Insecure_Design/</p>
             </td>
             <td>
@@ -576,13 +577,13 @@
                 Secure software requires a secure development lifecycle, some form of secure design pattern, paved road methodology, 
                 secured component library, tooling, and threat modeling.
               </p>
-              <a class="attack-link-t4" href="https://owasp.org/Top10/A04_2021-Insecure_Design/" target="_blank">https://owasp.org/Top10/A04_2021-Insecure_Design/</a>
+              <a class="attack-link-t3" href="https://owasp.org/Top10/A04_2021-Insecure_Design/" target="_blank">https://owasp.org/Top10/A04_2021-Insecure_Design/</a>
             </td>
           </tr>
           <tr>
             <td>
               <h4>A05 - Security Misconfiguration</h4>
-              <img class="attack-img-t4" src="Security_Misconfiguration.png" alt="Security_Misconfiguration" />
+              <img class="attack-img-t3" src="Security_Misconfiguration.png" alt="Security_Misconfiguration" />
               <p>Source: https://owasp.org/Top10/A05_2021-Security_Misconfiguration/</p>
             </td>
             <td>
@@ -595,13 +596,13 @@
                 that is appropriately locked down, a minimal platform without any unnecessary features, components, documentation, and samples 
                 a segmented application architecture provides effective and secure separation between components or tenants, etc.
               </p>
-              <a class="attack-link-t4" href="https://owasp.org/Top10/A05_2021-Security_Misconfiguration/" target="_blank">https://owasp.org/Top10/A05_2021-Security_Misconfiguration/</a>
+              <a class="attack-link-t3" href="https://owasp.org/Top10/A05_2021-Security_Misconfiguration/" target="_blank">https://owasp.org/Top10/A05_2021-Security_Misconfiguration/</a>
             </td>
           </tr>
           <tr>
             <td>
               <h4>A06 - Vulnerable and Outdated Components</h4>
-              <img class="attack-img-t4" src="Vulnerable_Outdated_Components.png" alt="Vulnerable_Outdated_Components" />
+              <img class="attack-img-t3" src="Vulnerable_Outdated_Components.png" alt="Vulnerable_Outdated_Components" />
               <p>Source: https://owasp.org/Top10/A06_2021-Vulnerable_and_Outdated_Components/</p>
             </td>
             <td>
@@ -614,13 +615,13 @@
                 Every organization must ensure an ongoing plan for monitoring, triaging, 
                 and applying updates or configuration changes for the lifetime of the application or portfolio.
               </p>
-              <a class="attack-link-t4" href="https://owasp.org/Top10/A06_2021-Vulnerable_and_Outdated_Components/" target="_blank">https://owasp.org/Top10/A06_2021-Vulnerable_and_Outdated_Components/</a>
+              <a class="attack-link-t3" href="https://owasp.org/Top10/A06_2021-Vulnerable_and_Outdated_Components/" target="_blank">https://owasp.org/Top10/A06_2021-Vulnerable_and_Outdated_Components/</a>
             </td>
           </tr>
           <tr>
             <td>
               <h4>A07 - Identification and Authentication Failures</h4>
-              <img class="attack-img-t4" src="Identification_and_Authentication_Failures.png" alt="Identification_and_Authentication_Failures" />
+              <img class="attack-img-t3" src="Identification_and_Authentication_Failures.png" alt="Identification_and_Authentication_Failures" />
               <p>Source: https://owasp.org/Top10/A07_2021-Identification_and_Authentication_Failures/</p>
             </td>
             <td>
@@ -634,13 +635,13 @@
                 do not ship or deploy with any default credentials, particularly for admin users, implement weak password checks, limit or increasingly delay failed login attempts, 
                 Use a server-side, secure, built-in session manager that generates a new random session ID with high entropy after login, etc.
               </p>
-              <a class="attack-link-t4" href="https://owasp.org/Top10/A07_2021-Identification_and_Authentication_Failures/" target="_blank">https://owasp.org/Top10/A07_2021-Identification_and_Authentication_Failures/</a>
+              <a class="attack-link-t3" href="https://owasp.org/Top10/A07_2021-Identification_and_Authentication_Failures/" target="_blank">https://owasp.org/Top10/A07_2021-Identification_and_Authentication_Failures/</a>
             </td>
           </tr>
           <tr>
             <td>
               <h4>A08 - Software and Data Integrity Failures</h4>
-              <img class="attack-img-t4" src="Software_and_Data_Integrity_Failures.png" alt="Software_and_Data_Integrity_Failures" />
+              <img class="attack-img-t3" src="Software_and_Data_Integrity_Failures.png" alt="Software_and_Data_Integrity_Failures" />
               <p>Source: https://owasp.org/Top10/A08_2021-Software_and_Data_Integrity_Failures/</p>
             </td>
             <td>
@@ -656,13 +657,13 @@
                 ensure that there is a review process for code and configuration changes to minimize the chance that malicious code or 
                 configuration could be introduced into your software pipeline, etc.
               </p>
-              <a class="attack-link-t4" href="https://owasp.org/Top10/A08_2021-Software_and_Data_Integrity_Failures/" target="_blank">https://owasp.org/Top10/A08_2021-Software_and_Data_Integrity_Failures/</a>
+              <a class="attack-link-t3" href="https://owasp.org/Top10/A08_2021-Software_and_Data_Integrity_Failures/" target="_blank">https://owasp.org/Top10/A08_2021-Software_and_Data_Integrity_Failures/</a>
             </td>
           </tr>
           <tr>
             <td>
               <h4>A09 - Security Logging and Monitoring Failures</h4>
-              <img class="attack-img-t4" src="Security_Logging_and_Monitoring_Failures.png" alt="Security_Logging_and_Monitoring_Failures" />
+              <img class="attack-img-t3" src="Security_Logging_and_Monitoring_Failures.png" alt="Security_Logging_and_Monitoring_Failures" />
               <p>Source: https://owasp.org/Top10/A09_2021-Security_Logging_and_Monitoring_Failures/</p>
             </td>
             <td>
@@ -676,13 +677,13 @@
                 ensure that logs are generated in a format that log management solutions can easily consume, 
                 ensure high-value transactions have an audit trail with integrity controls to prevent tampering or deletion, etc.
               </p>
-              <a class="attack-link-t4" href="https://owasp.org/Top10/A09_2021-Security_Logging_and_Monitoring_Failures/" target="_blank">https://owasp.org/Top10/A09_2021-Security_Logging_and_Monitoring_Failures/</a>
+              <a class="attack-link-t3" href="https://owasp.org/Top10/A09_2021-Security_Logging_and_Monitoring_Failures/" target="_blank">https://owasp.org/Top10/A09_2021-Security_Logging_and_Monitoring_Failures/</a>
             </td>
           </tr>
           <tr>
             <td>
               <h4>A10 - Server-Side Request Forgery (SSRF)</h4>
-              <img class="attack-img-t4" src="SSRF.png" alt="SSRF" />
+              <img class="attack-img-t3" src="SSRF.png" alt="SSRF" />
               <p>Source: https://owasp.org/Top10/A10_2021-Server-Side_Request_Forgery_%28SSRF%29/</p>
             </td>
             <td>
@@ -698,7 +699,7 @@
                 sanitize and validate all client-supplied input data, enforce the URL schema, port, and destination with a positive allow list, 
                 do not send raw responses to clients, disable HTTP redirections, etc.
               </p>
-              <a class="attack-link-t4" href="https://owasp.org/Top10/A10_2021-Server-Side_Request_Forgery_%28SSRF%29/" target="_blank">https://owasp.org/Top10/A10_2021-Server-Side_Request_Forgery_%28SSRF%29/</a>
+              <a class="attack-link-t3" href="https://owasp.org/Top10/A10_2021-Server-Side_Request_Forgery_%28SSRF%29/" target="_blank">https://owasp.org/Top10/A10_2021-Server-Side_Request_Forgery_%28SSRF%29/</a>
             </td>
           </tr>
         </tbody>
@@ -719,14 +720,13 @@
       <!-- Task 4 text field -->
       <input type="text" id="text-field-t4">
       <!-- Task 4 text message -->
-      <p id="text-msg-t4"></p>
+      <div id="text-msg-t4"></div>
       <!-- Task 4 image -->
       <img id="image-t4">
       <!-- Task 4 image reference link -->
       <a id="image-link-t4" href="" target="_blank"></a>
       <br>
     </div>
-
 
 
     <!-- Task 5 -->
